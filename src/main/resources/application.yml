@@ -1,0 +1,35 @@
+server:
+  port: 8091
+
+logging:
+  level:
+    root: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG
+    org.springframework.boot.autoconfigure: DEBUG
+
+spring:
+  thymeleaf:
+    cache: false
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: dashboard
+            client-secret: 542fc867-89ee-44dd-bf49-153db3d5b439
+            clientName: dashboard
+            authorization-grant-type: authorization_code
+            redirectUriTemplate: '{baseUrl}/login/oauth2/code/{registrationId}'
+            scope:
+              - openid
+              - profile
+              - email
+
+        provider:
+          keycloak:
+            authorization-uri: http://localhost:8080/auth/realms/blueport/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/blueport/protocol/openid-connect/token
+            user-info-uri: http://localhost:8080/auth/realms/blueport/protocol/openid-connect/userinfo
+            jwk-set-uri: http://localhost:8080/auth/realms/blueport/protocol/openid-connect/certs
+            user-name-attribute: preferred_username

@@ -1,0 +1,46 @@
+buildscript {
+	ext {
+		springBootVersion = '2.1.2.RELEASE'
+	}
+	repositories {
+		mavenCentral()
+	}
+	dependencies {
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+
+	implementation 'org.springframework.boot:spring-boot-starter-security'
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-webflux', version: '2.1.2.RELEASE'
+	implementation 'org.springframework.security:spring-security-oauth2-client'
+
+	implementation 'org.springframework.security:spring-security-oauth2-jose'
+	compile group: 'org.thymeleaf.extras', name: 'thymeleaf-extras-springsecurity4', version: '3.0.4.RELEASE'
+	compile group: 'io.projectreactor.ipc', name: 'reactor-netty', version: '0.7.14.RELEASE'
+	implementation 'org.projectlombok:lombok'
+	compile group: 'net.sourceforge.htmlunit', name: 'htmlunit', version: '2.33'
+
+
+
+	// compile group: 'org.keycloak', name: 'keycloak-spring-boot-starter', version: '4.8.3.Final'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.security:spring-security-test'
+}
