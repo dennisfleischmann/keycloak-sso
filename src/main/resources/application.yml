@@ -1,5 +1,5 @@
 server:
-  port: 8091
+  port: 8093
 
 logging:
   level:
@@ -7,6 +7,7 @@ logging:
     org.springframework.web: DEBUG
     org.springframework.security: DEBUG
     org.springframework.boot.autoconfigure: DEBUG
+
 
 spring:
   thymeleaf:
@@ -17,7 +18,7 @@ spring:
         registration:
           keycloak:
             client-id: dashboard
-            client-secret: 542fc867-89ee-44dd-bf49-153db3d5b439
+            client-secret: e6bddf3c-8368-47ef-ac16-adf4f46bda6d
             clientName: dashboard
             authorization-grant-type: authorization_code
             redirectUriTemplate: '{baseUrl}/login/oauth2/code/{registrationId}'
