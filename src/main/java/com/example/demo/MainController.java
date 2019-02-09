@@ -22,20 +22,22 @@ import java.util.Map;
 
 @Controller
 public class MainController {
-
+/*
     @Autowired
     private OAuth2AuthorizedClientService authorizedClientService;
-
+    */
+/*
     @GetMapping("/")
     public String index(Model model, OAuth2AuthenticationToken authentication) {
         OAuth2AuthorizedClient authorizedClient = this.getAuthorizedClient(authentication);
         model.addAttribute("userName", authentication.getName());
         model.addAttribute("clientName", authorizedClient.getClientRegistration().getClientName());
         return "index";
-    }
+    }*/
 
     @GetMapping("/userinfo")
     public String userinfo(Model model, OAuth2AuthenticationToken authentication) {
+        /*
         OAuth2AuthorizedClient authorizedClient = this.getAuthorizedClient(authentication);
         Map userAttributes = Collections.emptyMap();
         String userInfoEndpointUri = authorizedClient.getClientRegistration()
@@ -49,11 +51,12 @@ public class MainController {
                     .retrieve()
                     .bodyToMono(Map.class)
                     .block();
-        }
-        model.addAttribute("userAttributes", userAttributes);
+        }*/
+        model.addAttribute("userAttributes", "My Data");
         return "userinfo";
     }
 
+    /*
     @CrossOrigin(origins = "http://localhost:8090")
     @GetMapping("/dashboard")
     public String dashboard(Model model, OAuth2AuthenticationToken authentication) {
@@ -89,4 +92,5 @@ public class MainController {
                     return Mono.just(authorizedRequest);
                 });
     }
+    */
 }

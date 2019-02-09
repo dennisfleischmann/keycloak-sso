@@ -18,7 +18,7 @@ spring:
         registration:
           keycloak:
             client-id: dashboard
-            client-secret: e6bddf3c-8368-47ef-ac16-adf4f46bda6d
+            client-secret: 7bd32f17-43aa-4af3-83bd-f04d4dca2c34
             clientName: dashboard
             authorization-grant-type: authorization_code
             redirectUriTemplate: '{baseUrl}/login/oauth2/code/{registrationId}'
